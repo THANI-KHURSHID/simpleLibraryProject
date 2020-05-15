@@ -1,2 +1,2 @@
 # simpleLibraryProject
-A Library I Created While Learning Through The Odin Project.
+It is A simple library. It Uses Javscript Objects and Inheritance.
