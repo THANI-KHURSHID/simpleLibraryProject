@@ -2,3 +2,13 @@ h1 {
     color: aquamarine;
     font-family: Arial, Helvetica, sans-serif;
 }
+#addButton {
+    color: #444444;
+    background: #F3F3F3;
+    border: 1px #DADADA solid;
+    padding: 5px 10px;
+    border-radius: 2px;
+    font-weight: bold;
+    font-size: 9pt;
+    outline: none;
+}
