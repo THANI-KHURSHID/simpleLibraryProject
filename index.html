@@ -1,13 +1,25 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="utf-8">
-        <title>Library</title>
-        <link rel="stylesheet" href="styles/style.css">
-        </head>
-        <body>
-            <h1>Library</h1>
-            <input type="button" id = "addButton" value = "addbook" >
-        <script defer src = "scripts/app.js"> </script>
-        </body>
-    </html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Library</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Library</h1>
+      <a href="#" class="buttons">addbook</a>
+    </div>
+    <div class="popup">
+      <div class="popup-content">
+        
+        <input type="text" class="book-form" placeholder="Book's Name" />
+        <input type="text" class="author-form" placeholder="Author's Name" />
+        <input type="text" class="pages-form" placeholder="No. Of Pages" />
+        <input type="submit" class = "buttons" value="Done!">
+      </div>
+    </div>
+
+    <script defer src="scripts/app.js"></script>
+  </body>
+</html>
