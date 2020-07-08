@@ -1,4 +1,19 @@
-/* let myLibrary = [];
+//Variable
+let myLibrary = [];
+let author_name = "";
+let book_name = "";
+let pages_number = 0;
+const submitButton = document.querySelector(".btn");
+const buutonToOpenForm = document.querySelector(".open-button");
+const buttonToCloseForm = document.querySelector(".cancel");
+const authorTextField = document.getElementById("author-name-form");
+const bookNameTextField = document.getElementById("book-name-form");
+const numberOfPagesTextField = document.getElementById("pages-form");
+let readStatus = false;
+/*As Far as Style Guides Go. This is 
+the Worst SHit I have Ever written. Underscope,hyphone,
+came_case. MAke Your Fucking Mind*/
+/*Constructor */
 function Book(name, author, noOfPages, isRead) {
   this.name = name;
   this.author = author;
@@ -13,24 +28,48 @@ function Book(name, author, noOfPages, isRead) {
   };
 }
 
-
-function addBooksToLibrary() {
-  let newBook;
-  let tempName = prompt("What Is The Name of This Book?");
-  let tempAuthor = prompt("Who Is The Author Of This Book?");
-  let tempNumber = prompt("Size Is'nt Everything... But How long Is It?");
-  let tempStatus = prompt("Yes Or No... Did you Even Read It Bro?");
-  if (tempStatus.toLowerCase() === "yes") {
-    newBook = new Book(tempName, tempAuthor, tempNumber, true);
-  } else if (tempStatus.toLowerCase() === "no") {
-    newBook = new Book(tempName, tempAuthor, tempNumber, false);
+/**TODO:A function to check if all inputs have been provided. */
+function checkAllInputs() {}
+//Shows The Form
+buutonToOpenForm.addEventListener("click", () => {
+  document.getElementById("add-books").style.display = "block";
+});
+//Closes The Form
+buttonToCloseForm.addEventListener("click", () => {
+  document.getElementById("add-books").style.display = "none";
+  if (document.getElementById("bookIsRead").checked ) {
+    readStatus = true;
   }
-
+  addBooksToLibrary(book_name, author_name, pages_number, readStatus);
+  //checkAllInputs();
+});
+//Sets Text Field Value To Var
+authorTextField.onkeyup = function () {
+  author_name = this.value;
+};
+bookNameTextField.onkeyup = function () {
+  book_name = this.value;
+};
+numberOfPagesTextField.onkeyup = function () {
+  pages_number = Number(this.value);
+};
+function addBooksToLibrary(
+  author_name_temp,
+  book_name_temp,
+  pages_number_temp,
+  readStatus_temp
+) {
+  let newBook;
+  newBook = new Book(
+    author_name_temp,
+    book_name_temp,
+    pages_number_temp,
+    readStatus_temp
+  );
   myLibrary.push(newBook);
-  isLibraryEmpty = false;
 }
-const buttonToAddBooks = document.querySelector("#addButton");
-buttonToAddBooks.addEventListener("click", () => addBooksToLibrary()); */
-document.querySelector(".buttons").addEventListener("click" , function() {
-  document.querySelector(".popup").style.display = "flex";
-})
+//Added A WAY TO Close Form With CLicking ANywhere
+document.querySelector(".container").addEventListener("click" , function() {
+  document.getElementById("add-books").style.display = "none";
+
+} );

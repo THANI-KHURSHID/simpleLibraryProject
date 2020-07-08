@@ -6,20 +6,45 @@
     <link rel="stylesheet" href="styles/style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Library</h1>
-      <a href="#" class="buttons">addbook</a>
-    </div>
-    <div class="popup">
-      <div class="popup-content">
-        
-        <input type="text" class="book-form" placeholder="Book's Name" />
-        <input type="text" class="author-form" placeholder="Author's Name" />
-        <input type="text" class="pages-form" placeholder="No. Of Pages" />
-        <input type="submit" class = "buttons" value="Done!">
-      </div>
-    </div>
+    <div class="container"></div>
+    <button class="open-button">addbook</button>
+    <div class="form-popup" id="add-books">
+      <form action="#" autocomplete="off" class="form-container">
+        <label for="author-name"><b>Author's Name</b></label>
+        <input
+          type="text"
+          placeholder="Author's Name"
+          name="author-name"
+          id="author-name-form"
+          onfocus="this.value = ''"
+          required
+        />
 
+        <label for="book-name"><b>Book's Name</b></label>
+        <input
+          type="text"
+          placeholder="Book's Name"
+          name="book-name"
+          onfocus="this.value = ''"
+          id="book-name-form"
+          required
+        />
+
+        <label for="number-of-pages"><b>Book's Name</b></label>
+        <input
+          type="text"
+          placeholder="No. of Pages"
+          name="number-of-pages"
+          id="pages-form"
+          onfocus="this.value = '' "
+          required
+        />
+        <span>Have You Read It?</span>
+        <input type="radio" name="choice" value="yes" id="bookIsRead" /> Yes
+        <input type="radio" name="choice" value="no" id="bookIsNotRead" /> No
+        <button type="button" class="btn cancel">Submit & Close</button>
+      </form>
+    </div>
     <script defer src="scripts/app.js"></script>
   </body>
 </html>
