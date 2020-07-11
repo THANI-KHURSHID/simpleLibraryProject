@@ -37,7 +37,7 @@ buutonToOpenForm.addEventListener("click", () => {
 //Closes The Form
 buttonToCloseForm.addEventListener("click", () => {
   document.getElementById("add-books").style.display = "none";
-  if (document.getElementById("bookIsRead").checked ) {
+  if (document.getElementById("bookIsRead").checked) {
     readStatus = true;
   }
   addBooksToLibrary(book_name, author_name, pages_number, readStatus);
@@ -67,9 +67,12 @@ function addBooksToLibrary(
     readStatus_temp
   );
   myLibrary.push(newBook);
+  document.getElementById("testing").innerHTML = render();
 }
 //Added A WAY TO Close Form With CLicking ANywhere
-document.querySelector(".container").addEventListener("click" , function() {
+document.querySelector(".container").addEventListener("click", function () {
   document.getElementById("add-books").style.display = "none";
-
-} );
+});
+function render() {
+  return JSON.stringify(myLibrary, true, 2) + "<br/>";
+}
