@@ -12,20 +12,22 @@ const numberOfPagesTextField = document.getElementById("pages-form");
 let readStatus = false;
 /*As Far as Style Guides Go. This is 
 the Worst SHit I have Ever written. Underscope,hyphone,
-came_case. MAke Your Fucking Mind*/
+came_case. MAke up Your Fucking Mind*/
 /*Constructor */
-function Book(name, author, noOfPages, isRead) {
-  this.name = name;
-  this.author = author;
-  this.noOfPages = noOfPages;
-  this.isRead = isRead;
-  this.info = function () {
-    if (isRead) {
-      return `${this.name}, wriiten by ${this.author}, is ${this.noOfPages} pages long, read. `;
-    } else {
-      return `${this.name} , wriiten by ${this.author}, is ${this.noOfPages} pages long, not read yet. `;
-    }
-  };
+class Book {
+  constructor(name, author, noOfPages, isRead) {
+    this.name = name;
+    this.author = author;
+    this.noOfPages = noOfPages;
+    this.isRead = isRead;
+    this.info = function () {
+      if (isRead) {
+        return `${this.name}, wriiten by ${this.author}, is ${this.noOfPages} pages long, read. `;
+      } else {
+        return `${this.name} , wriiten by ${this.author}, is ${this.noOfPages} pages long, not read yet. `;
+      }
+    };
+  }
 }
 
 /**TODO:A function to check if all inputs have been provided. */
@@ -76,3 +78,5 @@ document.querySelector(".container").addEventListener("click", function () {
 function render() {
   return JSON.stringify(myLibrary, true, 2) + "<br/>";
 }
+/*I ask my family and friends to not judege me for this code.
+ This is not me. I will edit it at some point.*/
